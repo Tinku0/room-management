@@ -1,0 +1,72 @@
+<div class="">
+
+    <!-- <h3 class="text-secondary">Add An Expense</h3> -->
+
+    <h1 mat-dialog-title class="text-primary"> Add Expense <button mat-icon-button class="close-button"
+        [mat-dialog-close]="true">
+        <mat-icon>highlight_off</mat-icon>
+    </button> </h1>
+
+</div>
+
+<div class="container">
+
+    <form [formGroup]="expenseForm" (ngSubmit)="addExpense();">
+
+        <div class="row text-center">
+
+            <div class="col">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <mat-select formControlName="name">
+                      <mat-option *ngFor="let user of Users" [value]="user.name">
+                        {{user.name}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Purpose</mat-label>
+                    <input matInput placeholder="purpose" formControlName="purpose">
+                </mat-form-field>
+
+            </div>
+
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Expenditure</mat-label>
+                    <input matInput placeholder="expenditure" type="number" formControlName="expenditure">
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Date</mat-label>
+                    <input matInput placeholder="date" type="date" [max]="getToday()" formControlName="date">
+                </mat-form-field>
+
+            </div>
+
+        </div>
+
+        <div class="row text-center">
+            <div class="col">
+                <button type="submit" mat-raised-button [disabled]="expenseForm.invalid">add</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

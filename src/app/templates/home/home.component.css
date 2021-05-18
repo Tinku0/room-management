@@ -1,0 +1,23 @@
+.fancy-font{
+    font-family: 'Roboto', sans-serif;
+}
+span.head-text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+button{
+    outline : none;
+}
+
+.bg-fancy{
+    background : #eee;
+    border-radius: 5px;
+}
+
+.red{
+    color: rgba(255, 0, 0, 0.596);
+    cursor: pointer;
+}
